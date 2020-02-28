@@ -1,1 +1,26 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zix44</title>
+  <link rel="stylesheet" href="./clock.css">
+</head>
+<body>
+    <h1>Here is a clock</h1>
+<div id="clock" class="clock-style"></div>
+<script>
+// function to pad 0
+let z = function(p){ return p < 10 ? `0${p}` : p;}
+// function to update time. pass in element to update
+let updTime= function(elm){
+    let t = new Date();
+    elm.innerHTML=`
+        <text class="hr">${z(t.getHours())}</text>:
+        <text class="mn">${z(t.getHours())}</text>:
+        <text class="sc">${z(t.getSeconds())}</text>`;
+}
+// update clock every second
+let o = document.getElementById('clock');
+setInterval(()=>{updTime(o);}, 1000);
+</script>  
+</body>
+</html>
